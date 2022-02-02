@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@300&display=swap" rel="stylesheet">
+    <title>Врубель</title>
+</head>
+<body>
+    
+    <header class="header">
+        <a href="index.html">
+            <img src="img/BoS_logo.png" alt="logo" height="70">
+        </a>
+        <div class="header__box">
+            <form action="#" class="header__form">
+                <input type="checkbox" id="html-btn">
+                <label for="html-btn">html</label>
+                <div class="header__menu html">
+                    <a href="">Формы</a>
+                    <a href="">Семантика</a>
+                    <a href="">Интерактив</a>
+                    <a href="">Мета</a>
+                </div>
+            </form>
+
+            <form action="#" class="header__form">
+                <input type="checkbox" id="css-btn">
+                <label for="css-btn">css</label>
+                <div class="header__menu css">
+                    <a href="">Формы</a>
+                    <a href="">Семантика</a>
+                    <a href="">Интерактив</a>
+                    <a href="">Мета</a>
+                </div>
+            </form>
+
+            <form action="#" class="header__form">
+                <input type="checkbox" id="js-btn">
+                <label for="js-btn">js</label>
+                <div class="header__menu js">
+                    <a href="">Формы</a>
+                    <a href="">Семантика</a>
+                    <a href="">Интерактив</a>
+                    <a href="">Мета</a>
+                </div>
+            </form>
+
+            <form action="#" class="header__form">
+                <input type="checkbox" id="games-btn">
+                <label for="games-btn">games</label>
+                <div class="header__menu games">
+                    <a href="guess.html">Угадайка</a>
+                    <a href="www.html">WWW</a>
+                    <a href="blind.html">Слепая Печать</a>
+                    <a href="roulette.html">Рулетка</a>
+                    <a href="pdd.html">ПДД</a>
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <section class="slider">
+            <div class="slider__item">
+                <img src="img/demonDefeated.jpg" alt="photo" height="600">
+                <p>"Демон поверженный" 1901-1902.<span>Третьяковская галерея, Москва</span></p>
+            </div>
+            <div class="slider__item">
+                <img src="img/flyDemon.jpg" alt="photo" height="600">
+                <p>"Демон летящий" 1899.<span>Государственный Русский музей, Санкт-Петербург</span></p>
+            </div>
+            <div class="slider__item">
+                <img src="img/morning.jpg" alt="photo" height="600">
+                <p>"Утро" 1897.<span>Государственный Русский музей, Санкт-Петербург</span></p>
+            </div>
+            <div class="slider__item">
+                <img src="img/seatedDemon.jpg" alt="photo" height="600">
+                <p>"Демон сидящий" 1890<span>Третьяковская галерея, Москва</span></p>
+            </div>
+
+            <a href="#" class="prev" onClick="prevSlides()">&#10094;</a>
+            <a href="#" class="next" onClick="nextSlides()">&#10095;</a>
+        </section>
+
+        <section class="vrubel">
+            <h1>Михаил Врубель</h1>
+            <div class="vrubel__img">
+                <img src="img/vrubel.jpg" alt="portrait" height="500">
+            </div>
+            <div class="vrubel__description">
+                <p>	Михаил Врубель родился  в Омске 1856г. В семье никто не был связан с живописью, сам он получил юридическое образование. В живопись его привел Иммануил Кант. В теории эстетики Канта категория гениев с их особой миссией - работой в сфере между природой и свободой - признавалась только в области искусства. А кто в свои 24 года не ощущал себя гением? Из всех видов искусства, живопись Михаилу Врубелю нравилась больше всех.</p>
+
+                <p>Будущему художнику повезло, он стал заниматься индивидуально в мастерской легендарного Павла Петровича Чистякова. Чистяков был учителем практически у всех звезд русской живописи конца XIX века. Чистяков рекомендовал Врубеля Адриану Викторовичу Прахову, который в тот момент занимался реставрацией Кирилловской церкви в Киеве. Ему нужен был неизвестный и не дорогой мастер с академическим образованием. Врубель подходил идеально. Но только на первый взгляд, работы художника носили абсолютно самостоятельный характер. В них не было ни слова о реставрации пямятникво XII века.</p>
+
+                <p>Все было хорошо, заказчику понравились работы и он повысил гонорар. Но в жизнь художника пришла любовь - бич и вдохновение возвышенных натур. Вроде бы ничего плохого в этом нет, вот только объектом любви мастера стала жена его работодателя Эмилия Львовная Прахова. Сначала пылкого влюбленного отправили от греха подальше в Италию, но это никак на него не повлияло. Вернувшись в Киев, Врубель тут же объявил, что он намерен жениться и сделал это не Эмилии, а ее мужу. Финал предсказуем, Врубель вынужден был уехать, еще он начал резать себя, так ему становилось легче.</p>
+
+                <p>Новый этап своей жизни начался в Москве. Здесь он познакомился со своим главным благодетелем, меценатом Саввой Мамонтовым. Еще до этого у Врубеля случился кризис веры, в тот момент когда он писал картину МОЛЧАНИЕ О ЧАШЕ. Странно, но именно работая над росписью киевских церквей художник пришел к теме, которая не оставляла его уже до конца жизни. Он обрёл своего «Демона».</p>
+
+                <p>"Демон" стал визитной карточкой художника. Его поражение и его триумфом. Многие считаю серию полотен и скульптур своеобразной иллюстрацией к поэме Михаила Юрьевича Лермонтова. Но это совсем не так. Произведение Лермонтова - первопричина, но в сознании Врубеля причудливым образом преображалось все. Демон у художника - не дух зла. Он - душа самой природы и самого мастера. Врубель считал природу не просто живой, а населенной духами! Духи эти и есть настоящее лицо окружающего нас мира. Таким образом, история Демона превращается в совершенно другой сюжет, чем в поэме Лермонтова. Это история о смерти этого мира. В серии три картины, как три этапа сюжета. Размышление — <span id="seatDemon" onClick="openModal('seatModal')">«Демон сидящий»</span>, битва — <span id="flyDemon" onClick="openModal('flyModal')">«Демон летящий»</span> и поражение — <span id="defeatDemon" onClick="openModal('defeatModal')">«Демон поверженный»</span>.</p>
+
+                <p>	При создании картины Демон Поверженый, Врубель, для усиления впечатления от своего демона, добавлял в краску бронзовые порошки.
+                Поскольку картина изтогавливалась в мастерской, где был только один источник света, огромная лампа, которая за счет бронзовых порошков и усиливала впечатления. Но бранзовые порошки могут со временем испортиться и Третьяковка боялась приобретать эту картину. И когда картина все же оказалась на выставке, из за освещения не был тот ошеламляющий эффект. Тогда Врубелю пришлось редактировать ее прям на выставке, приходя каждый день и работь над ней. Посетители могли наблюдать как изменялись образы и положения Демона.</p>
+
+                <div id="seatModal" class="modal">
+                    <img src="img/seatedDemon.jpg" alt="seatDemon" height="900">
+                    <span id="seatClose" onClick="closeModal('seatModal')">&times;</span>
+                </div>
+
+                <div id="flyModal" class="modal">
+                    <img src="img/flyDemon.jpg" alt="flyDemon" height="600">
+                    <span id="flyClose" onClick="closeModal('flyModal')">&times;</span>
+                </div>
+
+                <div id="defeatModal" class="modal">
+                    <img src="img/demonDefeated.jpg" alt="defeatDemon" height="600">
+                    <span id="defeatClose" onClick="closeModal('defeatModal')">&times;</span>
+                </div>
+
+            </div>
+
+            <a href="https://artifex.ru/%D0%B6%D0%B8%D0%B2%D0%BE%D0%BF%D0%B8%D1%81%D1%8C/%D0%BC%D0%B8%D1%85%D0%B0%D0%B8%D0%BB-%D0%B2%D1%80%D1%83%D0%B1%D0%B5%D0%BB%D1%8C/" target="_blacnk">Ангелы и демоны Врубеля</a>
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; Ваши права защищены?</p>
+    </footer>
+
+    <script src="js/vrubel.js"></script>
+
+</body>
+</html>
