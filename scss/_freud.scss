@@ -1,0 +1,34 @@
+.freud {
+    max-width: 900px;
+    width: 100%;
+    margin: 90px auto;
+    padding: 48px 54px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $bgColor;
+    border: 1px solid $borderColor;
+
+    & h1 {
+        font-size: 30px;
+    }
+
+    &__img {
+        margin-top: 40px;
+
+        & img {
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__description {
+        margin-top: 56px;
+
+        & p {
+            margin-top: 12px;
+            text-indent: 36px;
+        }
+    }
+}
