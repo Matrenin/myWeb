@@ -31,20 +31,20 @@ function fortuna(rnd) {
     let array3 = [0];
     for(let i = 0; i < array3.length; i++) {
         array3[i] = +array3[i];
-        if(rnd == array3[i]) {
+        if(rnd, array3[i]) {
             array0 = [0, "зеро"];
             return array0;
         }
     }
 }
 
-function readInput(id) {
-    return document.getElementById(id).value;
-}
-
 play.addEventListener("click", function() {
     window.location.reload();
 });
+
+function readInput(id) {
+    return document.getElementById(id).value;
+}
 
 function newText(id, text) {
     document.getElementById(id).innerHTML = text;
@@ -54,12 +54,12 @@ function addText(id, text) {
     document.getElementById(id).append(text);
 }
 
-function hide(id) {
-    document.getElementById(id).style.display = "none";
-}
-
 function show(id) {
     document.getElementById(id).style.display = "flex";
+}
+
+function hide(id) {
+    document.getElementById(id).style.display = "none";
 }
 
 btnGame.addEventListener("click", function() {
@@ -73,57 +73,63 @@ btnGame.addEventListener("click", function() {
     } else if(game == "quit") {
         hide("boxGame");
         hide("btnGame");
-        newText("info", "Игра окончена.");
+        newText("info", "Игра окончена. У вас " + balance + " фишек.");
     }
 });
 
 btnNumber.addEventListener("click", function() {
-    let cifra = readInput("userNumber");
+    let number = readInput("userNumber");
     let stavka = readInput("stavkaNumber");
     if(stavka <= balance && stavka > 0) {
         balance -= stavka;
-        let result = getRandomNumber(36);
-        let array00 = fortuna(result);
-        newText("info", "Выпало число " + array00[0] + ", " + array00[1] + ". Вы выбрали число " + cifra + ", размер вашей ставки равен " + stavka + " фишек.");
-        if(cifra == result) {
+        let cifra = getRandomNumber(36);
+        let array00 = fortuna(cifra);
+        newText("info", "Выпало число " + array00[0] + ", " + array00[1] + ". Вы выбрали число " + number + ", размер вашей ставки равен " + stavka + " фишек.");
+        if(number == cifra) {
             balance += stavka * 35;
-            addText("info", "Поздравляю, вы угадали число. Ваш выигрышь составил " + stavka * 35 + " фишек.");
+            addText("info", "Поздравляю, вы угадали. Ваш выигрыш равен " + stavka * 35 + " фишек.");
             hide("numberGame");
             show("boxGame");
             newText("mainText", "Ваш баланс равен " + balance +  " фишек, выберите игру. Нажмите 1 - для угадывания числа, 2 - для угадывания цвета. Если хотите закончить игру введите слово quit.");
-        } else if(cifra != result) {
+        } else if(number != cifra) {
+            hide("numberGame");
+            show("boxGame");
+            newText("mainText", "Ваш баланс равен " + balance +  " фишек, выберите игру. Нажмите 1 - для угадывания числа, 2 - для угадывания цвета. Если хотите закончить игру введите слово quit.");
+        } else if(number == "0") {
+            balance += stavka / 2;
+            addText("info", "Так как выпало зероБ ваш выигрыш равен " + stavka / 2 + " фишек.");
             hide("numberGame");
             show("boxGame");
             newText("mainText", "Ваш баланс равен " + balance +  " фишек, выберите игру. Нажмите 1 - для угадывания числа, 2 - для угадывания цвета. Если хотите закончить игру введите слово quit.");
         }
     } else {
-        newText("info", "Вы указали не корректную сумму.");
+        newText("info", "Вы указали не корректную ставку.");
     }
 });
 
 btnColor.addEventListener("click", function() {
     let cvet = readInput("userColor");
     let color;
-    if(cvet == 1) {
+    if(cvet == "1") {
         color = "черное";
-    } else if(cvet == 2) {
+    } else if(cvet == "2") {
         color = "красное";
     }
     let stavka = readInput("stavkaColor");
     if(stavka <= balance && stavka > 0) {
+        balance -= stavka;
         let result = getRandomNumber(36);
         let array00 = fortuna(result);
-        balance -= stavka;
         newText("info", "Выпало число " + array00[0] + ", " + array00[1] + ". Вы выбрали цвет " + color + ", размер вашей ставки равен " + stavka + " фишек.");
         if(color == array00[1]) {
             balance += stavka * 2;
-            addText("info", "Поздравляю, вы угадали цвет. Ваш выигрышь равен " + stavka * 2 + " фишек.");
+            addText("info", "Поздравляю, вы угадали цвет. Ваш выиграш равен " + stavka * 2 + " фишек.");
             hide("colorGame");
             show("boxGame");
             newText("mainText", "Ваш баланс равен " + balance +  " фишек, выберите игру. Нажмите 1 - для угадывания числа, 2 - для угадывания цвета. Если хотите закончить игру введите слово quit.");
         } else if(array00[1] == "зеро") {
             balance += stavka / 2;
-            addText("info", "Так как выпало зеро, размер вашего выиграша равен " + stavka / 2 + " фишек.");
+            addText("info", "Так как выпало зеро, ваш выиграш равен " + stavka / 2 + " фишек.");
             hide("colorGame");
             show("boxGame");
             newText("mainText", "Ваш баланс равен " + balance +  " фишек, выберите игру. Нажмите 1 - для угадывания числа, 2 - для угадывания цвета. Если хотите закончить игру введите слово quit.");
@@ -133,6 +139,6 @@ btnColor.addEventListener("click", function() {
             newText("mainText", "Ваш баланс равен " + balance +  " фишек, выберите игру. Нажмите 1 - для угадывания числа, 2 - для угадывания цвета. Если хотите закончить игру введите слово quit.");
         }
     } else {
-        newText("info", "Вы указали не корректную сумму.");
+        newText("info", "Вы указали не корректную ставку.");
     }
 });

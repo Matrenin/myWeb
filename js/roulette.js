@@ -72,7 +72,7 @@ gameBtn.addEventListener("click", function() {
         show("colorBox");
     } else if(answer == "quit") {
         hide("gameBox");
-        addText("result", "Конец игры.");
+        newText("result", "Конец игры.");
         newText("balance", balance)
     }
 });
@@ -93,12 +93,14 @@ numberBtn.addEventListener("click", function() {
             show("gameBox");
             newText("mainText", "Ваш баланс равен " + balance + " кредитов, выбеите игру: нажмите цифру 1 - для угадывания числа, нажмите цифру 2 - для угадывания цвета. Для выхода введите quit.")
         } else if(cifra != result) {
-            addText("result", "Текущий остаток равен " + balance + " фишек.\n")
             newText("balance", balance);
             hide("numberBox");
             show("gameBox");
             newText("mainText", "Ваш баланс равен " + balance + " кредитов, выбеите игру: нажмите цифру 1 - для угадывания числа, нажмите цифру 2 - для угадывания цвета. Для выхода введите quit.")
         }
+    } else if(balance <= 0) {
+        hide("numberBox");
+        newText("result", "Ебаный рот этого казино!");
     } else {
         newText("result", "Вы указали сумму превышающую текущее количество кредитов на балансе.");
     }
@@ -133,12 +135,14 @@ colorBtn.addEventListener("click", function() {
             show("gameBox");
             newText("mainText", "Ваш баланс равен " + balance + " кредитов, выбеите игру: нажмите цифру 1 - для угадывания числа, нажмите цифру 2 - для угадывания цвета. Для выхода введите quit.");
         } else if(color != array00[1]) {
-            addText("result", "Текущий остаток равен " + balance + " фишек.\n");
             newText("balance", balance);
             hide("colorBox");
             show("gameBox");
             newText("mainText", "Ваш баланс равен " + balance + " кредитов, выбеите игру: нажмите цифру 1 - для угадывания числа, нажмите цифру 2 - для угадывания цвета. Для выхода введите quit.");
         }
+    } else if(balance <= 0) {
+        hide("colorBox");
+        newText("result", "Ебаный рот этого казино!");
     } else {
         newText("result", "Вы указали сумму превышающую текущее количество кредитов на балансе.\n");
     }
