@@ -12,6 +12,7 @@
 
     & h1 {
         font-size: 30px;
+        color: $titleColor;
     }
 
     &__img {
@@ -29,6 +30,7 @@
         & p {
             margin-top: 12px;
             text-indent: 36px;
+            color: #fff;
         }
     }
 }

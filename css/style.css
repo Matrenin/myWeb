@@ -763,103 +763,6 @@ main {
   padding: 0 8px;
 }
 
-.main {
-  background-image: url("../img/zdzislav.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.game {
-  background: #fff;
-  padding: 22px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  max-width: 800px;
-  width: 100%;
-  margin: 150px auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.game h1 {
-  text-align: center;
-}
-
-.game__block {
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.game__block p {
-  margin-top: 28px;
-}
-
-.game__block input {
-  max-width: 130px;
-  width: 100%;
-  height: 30px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  text-align: center;
-  margin-top: 40px;
-  background: #eee;
-  border: none;
-  border-bottom: 1px solid black;
-}
-
-.game__block input:focus {
-  outline: 1px solid #A4EEEB;
-  background: #fff;
-  border: none;
-}
-
-.game__block button {
-  margin: 32px auto;
-  max-width: 80px;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 8px 24px;
-  border: none;
-  background: #A4EEEB;
-  border-radius: 4px;
-}
-
-.game .result {
-  margin-top: 20px;
-}
-
-.game #play {
-  background: #5E9E1E;
-  margin-top: 28px;
-  padding: 8px 22px;
-  color: #fff;
-  text-decoration: none;
-}
-
-.game #numberGame,
-.game #colorGame {
-  display: none;
-}
-
 .slider {
   width: 100%;
   margin: auto;
@@ -945,7 +848,7 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: #FFFFEE;
+  background: #1a2127;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -957,6 +860,7 @@ main {
 
 .vrubel h1 {
   font-size: 30px;
+  color: #f5a623;
 }
 
 .vrubel__img {
@@ -976,6 +880,7 @@ main {
 .vrubel__description p {
   text-indent: 36px;
   margin-top: 12px;
+  color: #fff;
 }
 
 .vrubel__description p span {
@@ -1036,12 +941,13 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #FFFFEE;
+  background: #1a2127;
   border: 1px solid #FF6600;
 }
 
 .freud h1 {
   font-size: 30px;
+  color: #f5a623;
 }
 
 .freud__img {
@@ -1060,6 +966,47 @@ main {
 
 .freud__description p {
   margin-top: 12px;
+  text-indent: 36px;
+  color: #fff;
+}
+
+.quote {
+  max-width: 1200px;
+  width: 100%;
+  margin: 90px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 36px;
+}
+
+.quote__item {
+  padding: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #1a2127;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.quote__item h4 {
+  color: #f5a623;
+  margin-top: 22px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.quote__item p {
+  color: #fff;
   text-indent: 36px;
 }
 /*# sourceMappingURL=style.css.map */

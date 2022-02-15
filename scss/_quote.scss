@@ -1,0 +1,27 @@
+.quote {
+    max-width: 1200px;
+    width: 100%;
+    margin: 90px auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 36px;
+
+    &__item {
+        padding: 30px;
+        box-sizing: border-box;
+        background: $bgColor;
+        display: flex;
+        flex-direction: column;
+
+        & h4 {
+            color: $titleColor;
+            margin-top: 22px;
+            align-self: flex-end;
+        }
+
+        & p {
+            color: #fff;
+            text-indent: 36px;
+        }
+    }
+}

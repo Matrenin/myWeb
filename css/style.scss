@@ -1,6 +1,7 @@
 $mainColor: #A4EEEB;
-$bgColor: #FFFFEE;
+$bgColor: #1a2127;
 $borderColor: #FF6600;
+$titleColor: #f5a623;
 
 * {
     margin: 0;
@@ -45,3 +46,5 @@ main {
 @import "../scss/vrubel";
 
 @import "../scss/freud";
+
+@import "../scss/quote";

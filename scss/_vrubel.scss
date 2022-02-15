@@ -73,6 +73,7 @@
 
     & h1 {
         font-size: 30px;
+        color: $titleColor
     }
 
     &__img {
@@ -90,6 +91,7 @@
         & p {
             text-indent: 36px;
             margin-top: 12px;
+            color: #fff;
 
             & span {
                 cursor: pointer;
