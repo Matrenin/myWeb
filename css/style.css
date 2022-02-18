@@ -658,13 +658,14 @@ main {
 
 .content a h3 {
   margin-top: 8px;
-  color: #6A3CE7;
+  color: #599bd9;
   padding-left: 16px;
 }
 
 .content a p {
   color: #000;
   padding-left: 16px;
+  margin-top: 4px;
 }
 
 @media (max-width: 768px) {
@@ -838,7 +839,7 @@ main {
 }
 
 .vrubel {
-  max-width: 900px;
+  max-width: 1200px;
   width: 100%;
   margin: 130px auto;
   display: -webkit-box;
@@ -925,7 +926,7 @@ main {
 }
 
 .freud {
-  max-width: 900px;
+  max-width: 1200px;
   width: 100%;
   margin: 90px auto;
   padding: 48px 54px;
@@ -971,7 +972,7 @@ main {
 }
 
 .quote {
-  max-width: 1200px;
+  max-width: 1500px;
   width: 100%;
   margin: 90px auto;
   display: -webkit-box;
