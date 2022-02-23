@@ -69,10 +69,18 @@
     </header>
 
     <main>
-        
-    </main>
-
-
+        <section class="currency">
+            <h1>Конвектор валют</h1>
+            <p>Введите сумму в рублях:</p>
+            <input type="text" id="userRubles" autocomplete="off">
+            <select name="currency" id="currency-select">
+                <option value="">Выберите валюту</option>
+                <option value="dollars">Доллар США</option>
+                <option value="euro">Евро</option>
+            </select>
+            <button id="btn">Расчет</button>
+            <p>Результат: <span id="result"></span></p>
+        </section>
     </main>
 
     <footer class="footer">
