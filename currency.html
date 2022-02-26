@@ -69,14 +69,29 @@
     </header>
 
     <main>
-        
+        <section class="currency">
+            <h1>Конвектор валют</h1>
+            <p id="textRubles">Введите сумму в рублях</p>
+            <p id="textCurrency">Выберите валюту и укажите  сумму этой валюты, которую хотите перевести в рубли</p>
+            <input type="text" id="userRubles" autocomplete="off" placeholder="Рубли">
+            <input type="text" id="userCurrency" autocomplete="off">           
+            <img src="img/upDown.png" alt="upDown" height="40" id="change">          
+            <select name="currency" id="selectCurrency">
+                <option value="">Выберите валюту</option>
+                <option value="dollars">Доллар США</option>
+                <option value="euro">Евро</option>
+            </select>
+            <button id="btnRubles">Расчет</button>
+            <button id="btnCurrency">Расчет</button>
+            <p>Результат: <span id="result"></span></p>
+        </section>
     </main>
 
     <footer class="footer">
         <p>&copy; Ваши права защищены?</p>
     </footer>
 
-    <script src="js/pdd.js"></script>
+    <script src="js/currency.js"></script>
 
 </body>
 </html>

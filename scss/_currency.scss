@@ -1,0 +1,69 @@
+.currency {
+    max-width: 700px;
+    width: 100%;
+    margin: 90px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & h1 {
+        font-size: 30px;
+    }
+
+    & p {
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    #textCurrency,
+    #userCurrency,
+    #btnCurrency {
+        display: none;
+    }
+
+    & input {
+        margin-top: 38px;
+        max-width: 140px;
+        width: 100%;
+        height: 30px;
+        box-sizing: border-box;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #000;
+        background: #F2F6F6;
+        padding-left: 12px;
+
+        &:focus {
+            background: transparent;
+            border: none;
+            outline: 1px solid $mainColor;
+        }
+    }
+
+    & img {
+        margin-top: 22px;
+        transition: .6s;
+        cursor: pointer;
+
+        &:hover {
+            background: $mainColor;
+        }
+    }
+
+    & select {
+        margin-top: 22px;
+        max-width: 140px;
+        width: 100%;
+        height: 30px;
+        border: 1px solid $borderColor;
+    }
+
+    & button {
+        margin-top: 70px;
+        background: $mainColor;
+        box-sizing: border-box;
+        padding: 8px 22px;
+        border: none;
+        border-radius: 8px;
+    }
+}
