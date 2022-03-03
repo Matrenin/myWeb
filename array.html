@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@300&display=swap" rel="stylesheet">
+    <title>Array</title>
+</head>
+<body>
+    
+    <header class="header">
+        <a href="index.html">
+            <img src="img/BoS_logo.png" alt="logo" height="70">
+        </a>
+
+        <input type="checkbox" id="mobile">
+        <label for="mobile" class="mobile-btn">
+            <div></div>
+        </label>
+        
+        <div class="header__box">
+            <form action="#" class="header__form">
+                <input type="checkbox" id="html-btn">
+                <label for="html-btn">html</label>
+                <div class="header__menu html">
+                    <a href="">Формы</a>
+                    <a href="">Семантика</a>
+                    <a href="">Интерактив</a>
+                    <a href="">Мета</a>
+                </div>
+            </form>
+
+            <form action="#" class="header__form">
+                <input type="checkbox" id="css-btn">
+                <label for="css-btn">css</label>
+                <div class="header__menu css">
+                    <a href="">Формы</a>
+                    <a href="">Семантика</a>
+                    <a href="">Интерактив</a>
+                    <a href="">Мета</a>
+                </div>
+            </form>
+
+            <form action="#" class="header__form">
+                <input type="checkbox" id="js-btn">
+                <label for="js-btn">js</label>
+                <div class="header__menu js">
+                    <a href="">Формы</a>
+                    <a href="">Семантика</a>
+                    <a href="">Интерактив</a>
+                    <a href="">Мета</a>
+                </div>
+            </form>
+
+            <form action="#" class="header__form">
+                <input type="checkbox" id="games-btn">
+                <label for="games-btn">games</label>
+                <div class="header__menu games">
+                    <a href="guess.html">Угадайка</a>
+                    <a href="www.html">WWW</a>
+                    <a href="blind.html">Слепая Печать</a>
+                    <a href="roulette.html">Рулетка</a>
+                    <a href="currency.html">Конвектор валют</a>
+                    <a href="pdd.html">ПДД</a>
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <section class="array">
+            <h1>Методы массивов</h1>
+            <div class="array__method">
+                <p><span>Object.assign()</span> - метод используется для копирования значений всех собственных перечисляемых свойств из одного или более исходных объектов в целевой объект.</p>
+                <div class="description">
+                    <h4>Синтаксис:</h4>
+                    <p class="description__text">Object.assign(target, ...sources);</p>
+                    <div class="description__block">
+                        <p><span>target</span> - целевой объект</p>
+                        <p><span>sources</span> - исходный объект</p>
+                    </div>
+                </div>
+                <div class="example">
+                    <h4>Пример:</h4>
+                    <img src="img/array/object-assign.png" alt="example-photo" height="80">
+                    <p class="example__text">Где <span>{}</span> - это новый пустой объект куда будут записываться справа налева объекты, которые перечислены через запятую. Повторные свойства будут перезаписаны.</p>
+                </div>
+            </div>
+
+            <div class="array__method">
+                <p><span>Map()</span> - метод позволяет трансформировать один массив в другой при промощи функций-колбэка. Переданная функция будет вызвана для каждого элемента массива по порядку. Из результатов вызова функции будет собран новый массив.</p>
+                <div class="description">
+                    <h4>Синтаксис:</h4>
+                    <p class="description__text">let newArray = array.map(function callback(currentValue) {</p>
+                    <p class="description__text">// Возвращает элемент для newArray</p>
+                    <p class="description__text">});</p>
+                    <div class="description__block">
+                        <p><span>callback</span> - Функция, вызываемая для каждого элемента массива array. Каждый раз, когда callback выполняется, возвращаемое значение добавляется в newArray.</p>
+                        <p><span>currenctValue</span> - Текущий обрабатываемый элемент массива.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="array__method">
+                <p><span>Splice()</span> - метод изменяет содержимое массива, удаляя существующие элементы и/или добавляя новые.</p>
+                <div class="description">
+                    <h4>Синтаксис:</h4>
+                    <p class="description__text">array.splice(start, deleteCount, item);</p>
+                    <div class="description__block">
+                        <p><span>start</span> - индекс по которому начинает изменять массив.</p>
+                        <p><span>deleteCount</span> - целое число, показывающее количество старых удаляемых из массива элементов. Если deleteCount равен 0, элементы не удаляются. В этом случае вы должны указать как минимум один новый элемент.</p>
+                        <p><span>item</span> - необязательный параметр. Добавляет к массиву элементы.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="array__method">
+                <p><span>Includes()</span> - метод определяет, содержит ли массив определенный элемент, возвращая в зависимости от этого true или false.</p>
+                <div class="description">
+                    <h4>Синтаксис:</h4>
+                    <p class="description__text">array.includes(searchElement, fromIndex);</p>
+                    <div class="description__block">
+                        <p><span>seacrElement</span> - искомый элемент.</p>
+                        <p><span>fromIndex</span> - Необязательный параметр. Позиция в массиве, с которого начинается поиск элемента searchElement. Значение по умолчанию равно 0.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; Ваши права защищены?</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>

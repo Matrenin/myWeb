@@ -1,60 +1,44 @@
-// let words = ["норма", "форма", "нефть", "земля", "фокус"];
 
-
-function getRandomNumberAsArray() {
-    let generated = String(Math.random() * 1000000000000);
-    let result = [];
-    for (let value of generated) {
-        if (!result.includes(value)) {
-            result.push(value);
-        }
-        if (result.length == 4) {
-            return result;
-        }
-    }
+// Функция для создания объекта
+function Person(name, gender) {
+    this.name = name;
+    this.gender = gender;
 }
 
-function startGame() {
-    let riddle = getRandomNumberAsArray();
-    while (true) {
-        let answer = prompt("угадайте 4-ех значное число.").split("");
-        let result = getBullsAndCowsCount(riddle, answer);
-        console.log(`Ваш ответ: ${answer}, быков: ${result.bullsCount}, коров: ${result.cowsCount}\n`);
-        if (riddle.toString() == answer.toString()) {
-            console.log("You win");
-            break;
-        }
-    }
-    console.log("Загадка: " + riddle);
+// Кладем функцию в прототип, который для всех объектов Person один и тот же
+Person.prototype.sayHello = function() {
+    console.log("Меня зовут " + this.name);
 }
 
-function getBullsAndCowsCount(riddle, answer) {
-    let bullsCount = getBullsCount(riddle, answer);
-    let cowsCount = getCowsCount(riddle, answer);
-    return {
-        "bullsCount": bullsCount,
-        "cowsCount": cowsCount - bullsCount,
-    }
+// С помощью вызова функции создаем объект
+const person1 = new Person("Roman", "male");
+
+//      -----------
+
+function Employee(name, gender, position) {
+    // call вызовит функцию(Person), с этим объектом(this) внутри. Где this это тот самый объект который мы создаем.
+    Person.call(this, name, gender);
+    this.position = position;
 }
 
-function getBullsCount(riddle, answer) {
-    let count = 0;
-    for (let i = 0; i < riddle.length; i++) {
-        if (riddle[i] == answer[i]) {
-            count++;
-        }
-    }
-    return count;
+// У prototype Employee будет прототип Persen.prototype
+Employee.prototype = Object.create(Person.prototype);
+
+Employee.prototype.sayPosition = function() {
+    console.log("Моя должность " + this.position);
 }
 
-function getCowsCount(riddle, answer) {
-    let count = 0;
-    for (let value of riddle) {
-        if (answer.includes(value)) {
-            count++;
-        }
-    }
-    return count;
-}
+const employee1 = new Employee("Pavel", "male", "Teacher");
 
-startGame();
+// ========== ES6 =============
+
+class Person {
+    constructor(name, gender) {  // Заменяет 3-ю строку
+        this.name = name;
+        this.gender = gender;
+    }
+
+    sayHello() {    // Замена 9-ой строки
+        console.log("Меня зовут " + this.name);
+    }
+}
