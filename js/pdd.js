@@ -33,12 +33,27 @@ const employee1 = new Employee("Pavel", "male", "Teacher");
 // ========== ES6 =============
 
 class Person {
-    constructor(name, gender) {  // Заменяет 3-ю строку
-        this.name = name;
-        this.gender = gender;
-    }
-
-    sayHello() {    // Замена 9-ой строки
-        console.log("Меня зовут " + this.name);
-    }
+  constructor(name, gender) {
+    this.name = name;
+    this.gender = gender;
+  }
+  
+  sayName() {
+    console.log("Меня зовут " + this.name);
+  }
 }
+
+const person1 = new Person("Roman", "male");
+
+class Employee extends Person {
+  constructor(name, gender, position) {
+    super(name, gender);  // super означает вызови функцию конструктор(Person) и передай туда name и gender
+    this.position = position;
+  }
+  
+  sayPosition() {
+    console.log("Я ваш " + this.position);
+  }
+}
+
+const employee1 = new Employee("Pavel", "male", "teacher");
