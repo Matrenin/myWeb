@@ -34,6 +34,7 @@ function getBullsAndCowsCount(riddle, answer) {
     }
 }
 
+<<<<<<< HEAD
 function getBullsCount(riddle, answer) {
     let count = 0;
     for (let i = 0; i < riddle.length; i++) {
@@ -55,3 +56,34 @@ function getCowsCount(riddle, answer) {
 }
 
 startGame();
+=======
+const employee1 = new Employee("Pavel", "male", "Teacher");
+
+// ========== ES6 =============
+
+class Person {
+  constructor(name, gender) {
+    this.name = name;
+    this.gender = gender;
+  }
+  
+  sayName() {
+    console.log("Меня зовут " + this.name);
+  }
+}
+
+const person1 = new Person("Roman", "male");
+
+class Employee extends Person {
+  constructor(name, gender, position) {
+    super(name, gender);  // super означает вызови функцию конструктор(Person) и передай туда name и gender
+    this.position = position;
+  }
+  
+  sayPosition() {
+    console.log("Я ваш " + this.position);
+  }
+}
+
+const employee1 = new Employee("Pavel", "male", "teacher");
+>>>>>>> 8344174c12dbed767b4aaca10ce48d89e19b970a
