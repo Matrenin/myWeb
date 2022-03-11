@@ -1,59 +1,57 @@
-
-// Функция для создания объекта
-function Person(name, gender) {
-    this.name = name;
-    this.gender = gender;
+function getRandomNumberAsArray() {
+    let generated = String(Math.random() * 100000000000);
+    let result = [];
+    for (let value of generated) {
+        if (!result.includes(value)) {
+            result.push(value);
+        }
+        if (result.length == 3) {
+            return result;
+        }
+    }
 }
 
-// Кладем функцию в прототип, который для всех объектов Person один и тот же
-Person.prototype.sayHello = function() {
-    console.log("Меня зовут " + this.name);
+function startGame() {
+    let riddle = getRandomNumberAsArray();
+    while (true) {
+        let answer = prompt("Угадайте 3-х значное число").split("");
+        let result = getBullsAndCowsCount(riddle, answer);
+        console.log("Ваш ответ: " + answer + ", быков: " + result.bullsCount + ", коров: " + result.cowsCount + ".\n");
+        if (riddle.toString() == answer.toString() || answer.toString() == undefined) {
+            console.log("Вы попедили");
+            break;
+        }
+    }
+    console.log("Загадка: " + riddle);
 }
 
-// С помощью вызова функции создаем объект
-const person1 = new Person("Roman", "male");
-
-//      -----------
-
-function Employee(name, gender, position) {
-    // call вызовит функцию(Person), с этим объектом(this) внутри. Где this это тот самый объект который мы создаем.
-    Person.call(this, name, gender);
-    this.position = position;
+function getBullsAndCowsCount(riddle, answer) {
+    let bullsCount = getBullsCount(riddle, answer);
+    let cowsCount = getCowsCount(riddle, answer);
+    return {
+        "bullsCount": bullsCount,
+        "cowsCount": cowsCount - bullsCount,
+    }
 }
 
-// У prototype Employee будет прототип Persen.prototype
-Employee.prototype = Object.create(Person.prototype);
-
-Employee.prototype.sayPosition = function() {
-    console.log("Моя должность " + this.position);
+function getBullsCount(riddle, answer) {
+    let count = 0;
+    for (let i = 0; i < riddle.length; i++) {
+        if (riddle[i] == answer[i]) {
+            count++;
+        }
+    }
+    return count;
 }
 
-const employee1 = new Employee("Pavel", "male", "Teacher");
-
-// ========== ES6 =============
-
-class Person {
-  constructor(name, gender) {
-    this.name = name;
-    this.gender = gender;
-  }
-  
-  sayName() {
-    console.log("Меня зовут " + this.name);
-  }
+function getCowsCount(riddle, answer) {
+    let count = 0;
+    for (let value of riddle) {
+        if (answer.includes(value)) {
+            count++;
+        }
+    }
+    return count;
 }
 
-const person1 = new Person("Roman", "male");
-
-class Employee extends Person {
-  constructor(name, gender, position) {
-    super(name, gender);  // super означает вызови функцию конструктор(Person) и передай туда name и gender
-    this.position = position;
-  }
-  
-  sayPosition() {
-    console.log("Я ваш " + this.position);
-  }
-}
-
-const employee1 = new Employee("Pavel", "male", "teacher");
+startGame();
