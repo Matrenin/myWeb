@@ -35,6 +35,9 @@ function getBullsAndCowsCount(riddle, answer) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 35b692a0de090c1251ea4944dee1a487ee55498e
 function getBullsCount(riddle, answer) {
     let count = 0;
     for (let i = 0; i < riddle.length; i++) {
@@ -43,6 +46,7 @@ function getBullsCount(riddle, answer) {
         }
     }
     return count;
+<<<<<<< HEAD
 }
 
 function getCowsCount(riddle, answer) {
@@ -87,3 +91,18 @@ class Employee extends Person {
 
 const employee1 = new Employee("Pavel", "male", "teacher");
 >>>>>>> 8344174c12dbed767b4aaca10ce48d89e19b970a
+=======
+}
+
+function getCowsCount(riddle, answer) {
+    let count = 0;
+    for (let value of riddle) {
+        if (answer.includes(value)) {
+            count++;
+        }
+    }
+    return count;
+}
+
+startGame();
+>>>>>>> 35b692a0de090c1251ea4944dee1a487ee55498e
