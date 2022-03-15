@@ -16,9 +16,9 @@ function startGame() {
     while (true) {
         let answer = prompt("Угадайте 3-х значное число").split("");
         let result = getBullsAndCowsCount(riddle, answer);
-        console.log("Ваш ответ: " + answer + ", быков: " + result.bullsCount + ", коров: " + result.cowsCount + ".\n");
-        if (riddle.toString() == answer.toString() || answer.toString() == undefined) {
-            console.log("Вы попедили");
+        console.log("Ваш ответ: " + answer + ", быков: " + result.bullsCount + ", коров: " + result.cowsCount);
+        if (riddle.toString() == answer.toString()) {
+            console.log("Вы победили");
             break;
         }
     }
@@ -34,10 +34,6 @@ function getBullsAndCowsCount(riddle, answer) {
     }
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 35b692a0de090c1251ea4944dee1a487ee55498e
 function getBullsCount(riddle, answer) {
     let count = 0;
     for (let i = 0; i < riddle.length; i++) {
@@ -46,7 +42,6 @@ function getBullsCount(riddle, answer) {
         }
     }
     return count;
-<<<<<<< HEAD
 }
 
 function getCowsCount(riddle, answer) {
@@ -60,49 +55,3 @@ function getCowsCount(riddle, answer) {
 }
 
 startGame();
-=======
-const employee1 = new Employee("Pavel", "male", "Teacher");
-
-// ========== ES6 =============
-
-class Person {
-  constructor(name, gender) {
-    this.name = name;
-    this.gender = gender;
-  }
-  
-  sayName() {
-    console.log("Меня зовут " + this.name);
-  }
-}
-
-const person1 = new Person("Roman", "male");
-
-class Employee extends Person {
-  constructor(name, gender, position) {
-    super(name, gender);  // super означает вызови функцию конструктор(Person) и передай туда name и gender
-    this.position = position;
-  }
-  
-  sayPosition() {
-    console.log("Я ваш " + this.position);
-  }
-}
-
-const employee1 = new Employee("Pavel", "male", "teacher");
->>>>>>> 8344174c12dbed767b4aaca10ce48d89e19b970a
-=======
-}
-
-function getCowsCount(riddle, answer) {
-    let count = 0;
-    for (let value of riddle) {
-        if (answer.includes(value)) {
-            count++;
-        }
-    }
-    return count;
-}
-
-startGame();
->>>>>>> 35b692a0de090c1251ea4944dee1a487ee55498e
