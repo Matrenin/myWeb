@@ -7,19 +7,21 @@
     row-gap: 36px;
 
     &__item {
-        padding: 30px;
+        padding: 20px;
         box-sizing: border-box;
         background: $bgColor;
         display: flex;
         flex-direction: column;
 
         & h4 {
+            font-size: 14px;
             color: $titleColor;
-            margin-top: 22px;
+            margin-top: 16px;
             align-self: flex-end;
         }
 
         & p {
+            font-size: 14px;
             color: #fff;
             text-indent: 36px;
         }

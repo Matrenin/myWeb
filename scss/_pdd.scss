@@ -1,0 +1,47 @@
+.music {
+    max-width: 900px;
+    width: 100%;
+    margin: 90px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__box-btn {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+        max-width: 600px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+
+        & button {
+            border: none;
+            background: transparent;
+            padding: 12px 20px;
+            cursor: pointer;
+
+            &:hover {
+                background: black;
+                color: white;
+            }
+        }
+    }
+
+    &__box-product {
+        min-height: 100px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.product {
+    margin: 20px;
+    padding: 20px;
+    background: #F8F6D3;
+
+    p {
+        justify-self: end;
+    }
+}

@@ -1,3 +1,5 @@
+
+
 let number = parseInt(Math.random() * 15);
 let tryCount = 0;
 let maxTryCount = 3;
