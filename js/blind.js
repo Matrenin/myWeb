@@ -1,5 +1,7 @@
-var btn = document.getElementById("btn");
-var play = document.getElementById("play");
+let btn = document.getElementById("btn");
+let play = document.getElementById("play");
+let inputLetters = document.querySelector(".letters");
+
 
 play.addEventListener("click", function() {
     window.location.reload();
@@ -10,9 +12,9 @@ function getRandomNumber(max) {
 }
 
 function generateText(letter, length) {
-    var text = "";
-    for(var i = 0; i < length; i++) {
-        var n = getRandomNumber(letter.length - 1);
+    let text = "";
+    for(let i = 0; i < length; i++) {
+        let n = getRandomNumber(letter.length - 1);
         text = text + letter[n];
     }
     return text;
@@ -22,16 +24,22 @@ function addText(id, text) {
     document.getElementById(id).innerHTML = text;
 }
 
-var text = generateText(["a", "f", "s", "d"], 20);
-addText("text", text);
+// let text = generateText(["q", "w", "e", "r"], 20);
+// addText("text", text);
 
-function userAnswer() {
-    return document.getElementById("userAnswer").value;
+document.querySelector(".add__text-btn").addEventListener("click", () => {
+    let letters = inputLetters.value.split(",");
+    let text = generateText(letters, 20);   
+    addText("text", text);
+});
+
+function userAnswer(id) {
+    return document.querySelector(id).value;
 }
 
-
 btn.addEventListener("click", function() {
-    var answer = userAnswer();
+    let answer = userAnswer("#userAnswer");
+    let text = document.querySelector("#text").textContent;
     if(answer == text) {
         addText("info", "Поздравляю, у вас получилось.");
     } else {

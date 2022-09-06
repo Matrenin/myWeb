@@ -1,74 +1,73 @@
-let divEl = document.querySelector(".products");
+const api = "https://raw.githubusercontent.com/Matrenin/Test/main/response";
 
-// class Products {
-//     constructor(id, title, price) {
-//         this.id = id;
-//         this.title = title;
-//         this.price = price;
-//     }
-//     renderProduct() {
-//         return `
-//             <div class="product-item">
-//                 <h3>${this.title}</h3>
-//                 <p>${this.price}</p>
-//                 <button class="by-btn">Добавить</button>
-//             </div>   
-//         `;
-//     }
-// }
+class List {
+    constructor(container = ".products") {
+        this.container = document.querySelector(container);
+        this.goods = [];
+        this.products = [];
+        this.catalogUrl = "/catalog.json";
 
-// let products = [
-//     new Products (1, "Notebook", 100),
-//     new Products (2, "Mouse", 100),
-//     new Products (3, "Keyboard", 250),
-//     new Products (4, "Camepad", 150),
-// ];
-
-// divEl.innerHTML = products.map(el => el.renderProduct());
-
-let products = [
-    {id: 1, title: "Notebook", price: 1000},
-    {id: 2, title: "Mouse", price: 100},
-    {id: 3, title: "Keyboard", price: 250},
-    {id: 4, title: "Camepad", price: 150},
-];
-
-let renderProduct = (title, price) => {
-    return `
-        <div class="product-item">
-            <h3>${title}</h3>
-            <p>${price}</p>
-            <button class="by-btn">Добавить</button>
-        </div>
-    `;
-};
-
-let productsList = products.map((good) => {
-    return renderProduct(good.title, good.price);
-});
-
-divEl.innerHTML = productsList;
-
-// let renderProducts = (list) => {
-//     let productList = list.map((good) => {
-//         return renderProduct(good.title, good.price, good.img);
-//     });
-//     divEl.innerHTML = productList;
-// };
-
-// renderProducts(products);
-
-// 1.
-divEl.classList.add("parent-products");
-document.querySelectorAll(".product-item").forEach(el => el.classList.add("new-productItem"));
-document.querySelectorAll("h3").forEach(el => el.classList.add("product-title"));
-document.querySelectorAll("button").forEach(el => el.classList.add("product-btn"));
-
-
-// 3.
-const divNodes = divEl.childNodes;
-divNodes.forEach(node => {
-    if (node.nodeName == "#text") {
-        node.remove();
+        this.getJson(`${api + this.catalogUrl}`)
+            .then(data => {
+                this.goods = data;
+                this.render();
+            });
     }
-});
+
+    getJson(url) {
+        return fetch(url)
+            .then(response => response.json())
+            .catch(err => console.log(err));
+    }
+
+    render() {
+        for (let good of this.goods) {
+            let prod = new Item(good);
+            this.products.push(prod);
+            this.container.insertAdjacentHTML("beforeend", prod.getMarkup());
+            prod.showModal(good.id);
+        }
+    }
+}
+
+class Item {
+    constructor(elem) {
+        this.id = elem.id;
+        this.title = elem.title;
+        this.price = elem.price;
+    }
+
+    getMarkup() {
+        return `
+            <div>
+                <div class="product-item" data-id="${this.id}">
+                    <p>${this.title}</p>
+                    <p>${this.price}</p>
+                </div>
+
+                <div class="modal">
+                    <div class="modal__desc" data-id="${this.id}">
+                        <p>${this.title}</p>
+                        <p>${this.price}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    showModal(id) {
+        let modals = document.querySelectorAll(".modal");
+        document.querySelector(".products").addEventListener("click", event => {
+            if (event.target.closest(`.product-item[data-id="${id}"]`)) {
+                let itemId = event.target.dataset.id;
+                for (let modal of modals) {
+                    if (modal.dataset.id === itemId) {
+                        modal.style.display = "flex";
+                    }
+                }
+            }
+        });
+    }
+}
+
+let list = new List();
