@@ -24,13 +24,12 @@ function addText(id, text) {
     document.getElementById(id).innerHTML = text;
 }
 
-// let text = generateText(["q", "w", "e", "r"], 20);
-// addText("text", text);
 
 document.querySelector(".add__text-btn").addEventListener("click", () => {
     let letters = inputLetters.value.split(",");
     let text = generateText(letters, 20);   
     addText("text", text);
+    addText("info", "");
 });
 
 function userAnswer(id) {
