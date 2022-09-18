@@ -69,22 +69,24 @@
     </header>
 
     <main>
-        <section class="blind">
-            <h1>Вас приветствует программа по обучению слепой печати.</h1>
-            <input class="letters" type="text">
-            <button class="add__text-btn">Текст</button> 
-            <p id="info">Попробуйте повторить текст, не глядя на клавиатуру.</p>
-            <p id="text"></p>
-            <input type="text" id="userAnswer" autocomplete="off">
-            <button id="btn">Ответ</button>
-            <a href="#" id="play">Играть</a>
-        </section>
+        <div id="app">
+            <section class="blind">
+                <h1>Вас приветствует программа по обучению слепой печати.</h1>
+                <input class="letters" type="text" v-model="letters">
+                <button class="add__text-btn" @click="getNewText">Текст</button> 
+                <p id="text">{{ text }}</p>
+                <input type="text" id="userAnswer" autocomplete="off" v-model="answer">
+                <button @click="checkedAnswer" id="btn">Ответ</button>
+                <p>Правильных ответов: {{ count }}</p>
+            </section>
+        </div>
     </main>
 
     <footer class="footer">
         <p>&copy; Ваши права защищены?</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
     <script src="js/blind.js"></script>
 
 </body>
